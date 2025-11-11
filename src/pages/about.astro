@@ -4,19 +4,64 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="About Us | Luna Construction">
   <section class="relative bg-[url('/images/team-working.jpg')] bg-cover bg-center h-[60vh] flex items-center justify-center text-center text-white">
-  <div class="absolute inset-0 bg-black/60"></div>
-  <div class="relative z-10 px-6">
-    <h1 class="text-5xl font-bold mb-4">About Luna Construction</h1>
-    <p class="text-lg max-w-2xl mx-auto">
-      Dedicated to building trust and quality for over 15 years.
-    </p>
-  </div>
-</section>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-5xl font-bold mb-4">About Luna Construction</h1>
+      <p class="text-lg max-w-2xl mx-auto">
+        Dedicated to building trust and quality for over 15 years.
+      </p>
+    </div>
+  </section>
 
   <main class="space-y-24">
-    <MissionSection />
-    <ExperienceSection />
-    <TeamSection />
+    <section class="max-w-6xl mx-auto px-6 py-16 text-center">
+      <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+      <p class="max-w-3xl mx-auto text-lg">
+      At Luna Construction, our mission is to create lasting structures that stand the test of time.
+      We combine modern techniques with traditional craftsmanship to deliver projects that exceed expectations.
+      </p>
+    </section>
+
+    <section class="bg-gray-100 py-16 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-10">Our Experience</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="bg-white rounded-2xl p-8 shadow-md">
+            <h3 class="text-2xl font-semibold mb-3">15+ Years of Service</h3>
+            <p>Delivering consistent quality and reliable workmanship across California.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-md">
+            <h3 class="text-2xl font-semibold mb-3">100+ Projects Completed</h3>
+            <p>From homes to commercial spaces, our portfolio reflects our dedication and skill.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-md">
+            <h3 class="text-2xl font-semibold mb-3">Trusted Partnerships</h3>
+            <p>We value long-term relationships with our clients, subcontractors, and suppliers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <img src="/images/team1.jpg" alt="Team Member" class="w-40 h-40 mx-auto rounded-full object-cover shadow-md mb-4" />
+          <h3 class="text-xl font-semibold">Carlos Luna</h3>
+          <p class="text-gray-600">Founder & Project Manager</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/team2.jpg" alt="Team Member" class="w-40 h-40 mx-auto rounded-full object-cover shadow-md mb-4" />
+          <h3 class="text-xl font-semibold">Maria Torres</h3>
+          <p class="text-gray-600">Lead Architect</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/team3.jpg" alt="Team Member" class="w-40 h-40 mx-auto rounded-full object-cover shadow-md mb-4" />
+          <h3 class="text-xl font-semibold">James Rivera</h3>
+          <p class="text-gray-600">Construction Supervisor</p>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
