@@ -14,13 +14,14 @@ const {title} = Astro.props;
     <title>{title}</title>
 	</head>
 
-	<body class="font-sans bg-gray-50 text-gray-800">
+	<body class="bg-gray-50 text-gray-800 font-sans">
     <header class="bg-gray-900 text-white">
       <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <a href="/" class="text-2xl font-bold tracking-wide">Luna Construction</a>
+        <a href="/" class="text-2xl font-bold tracking-wide">Luna Handyman Solutions</a>
         <div class="space-x-6">
           <a href="/about" class="hover:text-yellow-400">About</a>
           <a href="/services" class="hover:text-yellow-400">Services</a>
+          <a href="/projects" class="hover:text-yellow-400">Projects</a>
           <a href="/contact" class="hover:text-yellow-400">Contact</a>
         </div>
       </nav>
@@ -29,7 +30,7 @@ const {title} = Astro.props;
     <slot />
 
     <footer class="bg-gray-900 text-gray-300 text-center py-8 mt-16">
-      <p>© {new Date().getFullYear()} Luna Construction. All rights reserved.</p>
+      <p>© {new Date().getFullYear()} Luna Handyman Solutions. All rights reserved.</p>
     </footer>
   </body>
 </html>
