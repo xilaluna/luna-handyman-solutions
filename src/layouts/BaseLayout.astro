@@ -1,6 +1,7 @@
 ---
 
 const {title} = Astro.props;
+import "../styles/global.css";
 
 ---
 
@@ -15,17 +16,28 @@ const {title} = Astro.props;
 	</head>
 
 	<body class="bg-gray-50 text-gray-800 font-sans">
-    <header class="bg-gray-900 text-white">
-      <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <a href="/" class="text-2xl font-bold tracking-wide">Luna Handyman Solutions</a>
-        <div class="space-x-6">
-          <a href="/about" class="hover:text-yellow-400">About</a>
-          <a href="/services" class="hover:text-yellow-400">Services</a>
-          <a href="/projects" class="hover:text-yellow-400">Projects</a>
-          <a href="/contact" class="hover:text-yellow-400">Contact</a>
+    <nav class="w-full bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold text-blue-900">
+          Luna Handyman Solutions
+        </a>
+
+        <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
+          <a href="/" class="hover:text-blue-900 transition">Home</a>
+          <a href="/about" class="hover:text-blue-900 transition">About</a>
+          <a href="/services" class="hover:text-blue-900 transition">Services</a>
+          <a href="/projects" class="hover:text-blue-900 transition">Projects</a>
+          <a href="/contact" class="hover:text-blue-900 transition">Contact</a>
         </div>
-      </nav>
-    </header>
+
+        <a
+          href="/contact"
+          class="md:hidden bg-blue-900 text-white px-4 py-2 rounded-lg"
+        >
+          Contact
+        </a>
+      </div>
+    </nav>
 
     <slot />
 
