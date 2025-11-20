@@ -15,24 +15,24 @@ import "../styles/global.css";
     <title>{title}</title>
 	</head>
 
-	<body class="bg-gray-50 text-gray-800 font-sans">
-    <nav class="w-full bg-white shadow-sm sticky top-0 z-50">
+	<body class="bg-neutral-white text-neutral-dark-gray font-sans">
+    <nav class="w-full bg-secondary shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="text-2xl font-bold text-blue-900">
+        <a href="/" class="text-2xl font-bold text-primary">
           Luna Handyman Solutions
         </a>
 
-        <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
-          <a href="/" class="hover:text-blue-900 transition">Home</a>
-          <a href="/about" class="hover:text-blue-900 transition">About</a>
-          <a href="/services" class="hover:text-blue-900 transition">Services</a>
-          <a href="/projects" class="hover:text-blue-900 transition">Projects</a>
-          <a href="/contact" class="hover:text-blue-900 transition">Contact</a>
+        <div class="hidden md:flex space-x-8 text-neutral-white font-medium">
+          <a href="/" class="hover:text-primary transition">Home</a>
+          <a href="/about" class="hover:text-primary transition">About</a>
+          <a href="/services" class="hover:text-primary transition">Services</a>
+          <a href="/projects" class="hover:text-primary transition">Projects</a>
+          <a href="/contact" class="hover:text-primary transition">Contact</a>
         </div>
 
         <a
           href="/contact"
-          class="md:hidden bg-blue-900 text-white px-4 py-2 rounded-lg"
+          class="md:hidden bg-primary text-neutral-white px-4 py-2 rounded-lg"
         >
           Contact
         </a>
@@ -41,7 +41,7 @@ import "../styles/global.css";
 
     <slot />
 
-    <footer class="bg-gray-900 text-gray-300 text-center py-8 mt-16">
+    <footer class="bg-secondary text-neutral-white text-center py-8 mt-16">
       <p>© {new Date().getFullYear()} Luna Handyman Solutions. All rights reserved.</p>
     </footer>
   </body>
