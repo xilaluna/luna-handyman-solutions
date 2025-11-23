@@ -1,5 +1,4 @@
 ---
-
 const {title} = Astro.props;
 import "../styles/global.css";
 
@@ -16,33 +15,112 @@ import "../styles/global.css";
 	</head>
 
 	<body class="bg-neutral-light text-neutral-dark font-sans">
-    <nav class="w-full bg-primary shadow-md sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="text-2xl font-bold text-accent">
-          Luna Handyman Solutions
-        </a>
+    <nav class="sticky top-0 z-50">
+      <div class="relative bg-neutral-dark/90 backdrop-blur supports-[backdrop-filter]:bg-neutral-dark/75 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+          <a href="/" class="flex items-center gap-3 text-neutral-white">
+            <span class="h-11 w-11 rounded-xl bg-accent text-neutral-dark font-extrabold text-xl flex items-center justify-center shadow-lg">L</span>
+            <div class="leading-tight">
+              <p class="text-lg font-bold">Luna Handyman</p>
+              <p class="text-sm text-neutral-light-gray">Builds • Renovations • Care</p>
+            </div>
+          </a>
 
-        <div class="hidden md:flex space-x-8 text-neutral-white font-medium">
-          <a href="/" class="hover:text-accent transition">Home</a>
-          <a href="/about" class="hover:text-accent transition">About</a>
-          <a href="/services" class="hover:text-accent transition">Services</a>
-          <a href="/projects" class="hover:text-accent transition">Projects</a>
-          <a href="/contact" class="hover:text-accent transition">Contact</a>
+          <div class="hidden md:flex items-center gap-8 text-neutral-light-gray font-medium">
+            <a href="/" class="hover:text-accent transition">Home</a>
+            <a href="/about" class="hover:text-accent transition">About</a>
+            <a href="/services" class="hover:text-accent transition">Services</a>
+            <a href="/projects" class="hover:text-accent transition">Projects</a>
+            <a href="/contact" class="hover:text-accent transition">Contact</a>
+          </div>
+
+          <div class="hidden md:flex items-center gap-3">
+            <a href="tel:+1-555-123-4567" class="inline-flex items-center gap-2 text-neutral-light-gray hover:text-accent transition">
+              <span class="text-lg">📞</span>
+              <span class="font-semibold">555-123-4567</span>
+            </a>
+            <a href="/contact" class="inline-flex items-center gap-2 bg-accent text-neutral-dark font-semibold px-4 py-3 rounded-xl shadow-lg hover:bg-[var(--color-accent-strong)] transition">
+              Get a quote
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <details class="md:hidden relative">
+            <summary class="flex items-center gap-3 text-neutral-white cursor-pointer select-none border border-white/15 rounded-xl px-3 py-2 hover:border-white/30 transition">
+              <span class="font-semibold">Menu</span>
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" d="M3 6h14M3 10h14M3 14h14" />
+              </svg>
+            </summary>
+            <div class="absolute right-0 mt-3 w-64 bg-neutral-dark border border-white/15 rounded-2xl shadow-2xl p-4 flex flex-col gap-3 text-neutral-light-gray">
+              <a href="/" class="hover:text-accent transition">Home</a>
+              <a href="/about" class="hover:text-accent transition">About</a>
+              <a href="/services" class="hover:text-accent transition">Services</a>
+              <a href="/projects" class="hover:text-accent transition">Projects</a>
+              <a href="/contact" class="hover:text-accent transition">Contact</a>
+              <a href="/contact" class="inline-flex justify-center items-center gap-2 bg-accent text-neutral-dark font-semibold px-3 py-3 rounded-xl shadow hover:bg-[var(--color-accent-strong)] transition">
+                Get a quote
+              </a>
+            </div>
+          </details>
         </div>
-
-        <a
-          href="/contact"
-          class="md:hidden bg-accent text-secondary px-4 py-2 rounded-lg"
-        >
-          Contact
-        </a>
       </div>
     </nav>
 
     <slot />
 
-    <footer class="bg-secondary-dark text-neutral-light text-center py-8 mt-16">
-      <p>© {new Date().getFullYear()} Luna Handyman Solutions. All rights reserved.</p>
+    <footer class="bg-neutral-dark text-neutral-light mt-20">
+      <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="h-11 w-11 rounded-xl bg-accent text-neutral-dark font-extrabold text-xl flex items-center justify-center shadow-lg">L</span>
+            <div>
+              <p class="text-lg font-bold text-neutral-white">Luna Handyman Solutions</p>
+              <p class="text-sm text-neutral-light-gray">Craftsmanship, clarity, and jobsite care on every build.</p>
+            </div>
+          </div>
+          <p class="text-neutral-light-gray">
+            Full-service construction and renovation crews serving residential and commercial clients with transparent communication and reliable delivery.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="/contact" class="inline-flex items-center gap-2 bg-accent text-neutral-dark font-semibold px-4 py-3 rounded-xl shadow hover:bg-[var(--color-accent-strong)] transition">
+              Book a walkthrough
+            </a>
+            <a href="tel:+1-555-123-4567" class="inline-flex items-center gap-2 text-neutral-light-gray hover:text-accent transition">
+              <span class="text-lg">📞</span> 555-123-4567
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.18em] text-neutral-light-gray">Company</p>
+          <div class="flex flex-col gap-2 text-neutral-white">
+            <a href="/about" class="hover:text-accent transition">About</a>
+            <a href="/services" class="hover:text-accent transition">Services</a>
+            <a href="/projects" class="hover:text-accent transition">Projects</a>
+            <a href="/contact" class="hover:text-accent transition">Contact</a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.18em] text-neutral-light-gray">Visit</p>
+          <p class="text-neutral-white leading-relaxed">
+            123 Builder Ave<br />
+            Suite 200<br />
+            Denver, CO 80202
+          </p>
+          <p class="text-neutral-light-gray">Mon - Sat · 7am - 6pm</p>
+        </div>
+      </div>
+      <div class="border-t border-white/10 text-center text-sm text-neutral-light-gray py-5">
+        © {new Date().getFullYear()} Luna Handyman Solutions. All rights reserved.
+      </div>
     </footer>
   </body>
 </html>
+
+<style>
+  nav summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

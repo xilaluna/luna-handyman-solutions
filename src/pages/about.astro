@@ -3,40 +3,145 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About Us | Luna Handyman Solutions">
-  <section class="relative bg-[url('/images/team-working.jpg')] bg-cover bg-center h-[60vh] flex items-center justify-center text-center text-white">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative z-10 px-6">
-      <h1 class="text-5xl font-bold mb-4">About Luna Handyman Solutions</h1>
-      <p class="text-lg max-w-2xl mx-auto">
-        Dedicated to building trust and quality for over 15 years.
-      </p>
+  <section class="relative isolate overflow-hidden bg-gradient-to-br from-neutral-dark via-neutral-dark to-secondary">
+    <div class="absolute -left-24 top-10 h-64 w-64 rounded-full bg-accent/30 blur-3xl"></div>
+    <div class="absolute right-0 bottom-10 h-72 w-72 rounded-full bg-primary/20 blur-3xl"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-28 text-neutral-white">
+      <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-4 py-2 backdrop-blur">
+        <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em]">About us</p>
+      </div>
+
+      <div class="grid md:grid-cols-[1.2fr,0.8fr] gap-10 items-center mt-10">
+        <div class="space-y-4">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">We’re builders who treat your project like it’s our own home.</h1>
+          <p class="text-lg text-neutral-light-gray max-w-2xl leading-relaxed">
+            Luna Handyman Solutions is a full-service construction partner delivering residential and commercial builds with clear communication, disciplined scheduling, and finish-grade craftsmanship.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-full border border-white/25 bg-white/10 text-sm font-semibold">Licensed & insured crews</span>
+            <span class="px-4 py-2 rounded-full border border-white/25 bg-white/10 text-sm font-semibold">Transparent reporting</span>
+            <span class="px-4 py-2 rounded-full border border-white/25 bg-white/10 text-sm font-semibold">Quality-first culture</span>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-xl border border-white/15 rounded-3xl shadow-2xl p-6 space-y-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm uppercase tracking-[0.16em] text-neutral-light-gray">Founded</p>
+              <p class="text-3xl font-bold text-neutral-white">2008</p>
+            </div>
+            <span class="inline-flex items-center gap-2 bg-accent text-neutral-dark px-3 py-1 rounded-full text-sm font-semibold shadow">
+              15+ years strong
+            </span>
+          </div>
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="rounded-2xl bg-white/10 border border-white/10 px-3 py-4">
+              <p class="text-2xl font-bold text-accent">100+</p>
+              <p class="text-xs uppercase tracking-wide text-neutral-light-gray">Projects</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 border border-white/10 px-3 py-4">
+              <p class="text-2xl font-bold text-neutral-white">4.9★</p>
+              <p class="text-xs uppercase tracking-wide text-neutral-light-gray">Client rating</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 border border-white/10 px-3 py-4">
+              <p class="text-2xl font-bold text-primary">Zero</p>
+              <p class="text-xs uppercase tracking-wide text-neutral-light-gray">Tolerance for rework</p>
+            </div>
+          </div>
+          <div class="space-y-3 text-neutral-light-gray">
+            <p class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Dedicated site leads on every job, with daily updates you can act on.</p>
+            <p class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Specialists for each phase: structural, MEP, finishes, and post-completion care.</p>
+            <p class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Safety-first culture backed by training, checklists, and insured crews.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <main class="space-y-24">
-    <section class="max-w-6xl mx-auto px-6 py-16 text-center">
-      <h2 class="text-3xl font-bold text-secondary mb-6">Our Mission</h2>
-      <p class="max-w-3xl mx-auto text-lg">
-      At Luna Handyman Solutions, our mission is to create lasting structures that stand the test of time.
-      We combine modern techniques with traditional craftsmanship to deliver projects that exceed expectations.
-      </p>
+    <section class="max-w-6xl mx-auto px-6 pt-16">
+      <div class="grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-start">
+        <div class="space-y-4">
+          <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">Mission & approach</p>
+          <h2 class="text-4xl font-bold text-secondary leading-tight">Build boldly. Communicate clearly. Deliver safely.</h2>
+          <p class="text-lg text-neutral-dark-gray leading-relaxed">
+            We combine modern project controls with meticulous craft. That means predictable schedules, durable materials, and a finish that feels intentional—whether it’s a new build or a complex renovation in an occupied space.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
+              <p class="font-semibold text-neutral-dark">Everyday clarity</p>
+              <p class="text-sm text-neutral-dark-gray">Daily photo logs, milestone check-ins, and change-order transparency.</p>
+            </div>
+            <div class="rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
+              <p class="font-semibold text-neutral-dark">Craftsmanship first</p>
+              <p class="text-sm text-neutral-dark-gray">Vetted trades, tight tolerances, and finish-grade supervision.</p>
+            </div>
+            <div class="rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
+              <p class="font-semibold text-neutral-dark">Risk managed</p>
+              <p class="text-sm text-neutral-dark-gray">Permits, inspections, and safety protocols handled start to finish.</p>
+            </div>
+            <div class="rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
+              <p class="font-semibold text-neutral-dark">Post-build care</p>
+              <p class="text-sm text-neutral-dark-gray">Punch lists, warranty support, and maintenance guidance.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-neutral-dark text-neutral-white rounded-3xl p-8 shadow-2xl border border-neutral-800 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="h-11 w-11 rounded-xl bg-accent text-neutral-dark font-extrabold text-xl flex items-center justify-center shadow-lg">L</span>
+            <div>
+              <p class="text-lg font-bold">From our founder</p>
+              <p class="text-sm text-neutral-light-gray">Luis Luna, Site Lead</p>
+            </div>
+          </div>
+          <p class="text-lg leading-relaxed text-neutral-light-gray">
+            “Clients trust us because we speak plainly, show the work, and stand behind every decision. My job is to make sure you always know what’s happening on site—and that the result feels better than what you imagined.”
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-2 rounded-full bg-white/10 border border-white/15 text-sm">24/7 site lead access</span>
+            <span class="px-3 py-2 rounded-full bg-white/10 border border-white/15 text-sm">Weekly executive updates</span>
+            <span class="px-3 py-2 rounded-full bg-white/10 border border-white/15 text-sm">Hands-on QC at each milestone</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="bg-neutral-light-gray py-16 px-6">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-secondary mb-10">Our Experience</h2>
-        <div class="grid md:grid-cols-3 gap-10">
-          <div class="bg-white rounded-2xl p-8 shadow-md">
-            <h3 class="text-2xl font-semibold mb-3">15+ Years of Service</h3>
-            <p>Delivering consistent quality and reliable workmanship across California.</p>
+      <div class="max-w-6xl mx-auto space-y-10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">How we work</p>
+            <h3 class="text-3xl md:text-4xl font-bold text-secondary leading-tight">A dependable path from scope to sign-off.</h3>
           </div>
-          <div class="bg-white rounded-2xl p-8 shadow-md">
-            <h3 class="text-2xl font-semibold mb-3">100+ Projects Completed</h3>
-            <p>From homes to commercial spaces, our portfolio reflects our dedication and skill.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 bg-accent text-neutral-dark font-semibold px-4 py-3 rounded-xl shadow hover:bg-[var(--color-accent-strong)] transition">
+            Book a project consult
+            <span aria-hidden="true" class="text-lg">→</span>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-neutral-200">
+            <p class="text-sm uppercase tracking-[0.16em] text-primary font-semibold">01</p>
+            <h4 class="text-xl font-bold text-neutral-dark mt-2 mb-2">Scope & site walk</h4>
+            <p class="text-neutral-dark-gray text-sm leading-relaxed">We document conditions, risks, and opportunities—then align on budget targets and constraints.</p>
           </div>
-          <div class="bg-white rounded-2xl p-8 shadow-md">
-            <h3 class="text-2xl font-semibold mb-3">Trusted Partnerships</h3>
-            <p>We value long-term relationships with our clients, subcontractors, and suppliers.</p>
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-neutral-200">
+            <p class="text-sm uppercase tracking-[0.16em] text-primary font-semibold">02</p>
+            <h4 class="text-xl font-bold text-neutral-dark mt-2 mb-2">Plan & permit</h4>
+            <p class="text-neutral-dark-gray text-sm leading-relaxed">Build plan, schedule, and procurement mapped; permitting and inspections handled for you.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-neutral-200">
+            <p class="text-sm uppercase tracking-[0.16em] text-primary font-semibold">03</p>
+            <h4 class="text-xl font-bold text-neutral-dark mt-2 mb-2">Execute with clarity</h4>
+            <p class="text-neutral-dark-gray text-sm leading-relaxed">Coordinated trades, daily progress logs, and clean, safe sites—especially in occupied spaces.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-neutral-200">
+            <p class="text-sm uppercase tracking-[0.16em] text-primary font-semibold">04</p>
+            <h4 class="text-xl font-bold text-neutral-dark mt-2 mb-2">QC & handoff</h4>
+            <p class="text-neutral-dark-gray text-sm leading-relaxed">Punch lists closed fast, warranties issued, and post-build support to keep your space thriving.</p>
           </div>
         </div>
       </div>
