@@ -1,13 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #6D071A;
-  --color-secondary: #A61738;
-  --color-neutral-white: #FFFFFF;
-  --color-neutral-light-gray: #F5F5F5;
-  --color-neutral-dark-gray: #222222;
-  --color-accent: #DFAF32;
-  --color-feedback-success: #6DBF4D;
-  --color-feedback-warning: #F2C94C;
-  --color-feedback-error: #D64545;
+  /* Brand core: deep red paired with navy for structure */
+  --color-primary: #8f1f30;
+  --color-primary-dark: #631624;
+  --color-primary-light: #b94758;
+  --color-secondary: #1b2f4b;
+  --color-secondary-dark: #102035;
+
+  /* Accent: warm metallic highlight for calls to action */
+  --color-accent: #d3a444;
+  --color-accent-strong: #b68424;
+
+  /* Neutrals: clean, construction-friendly grays */
+  --color-neutral-white: #ffffff;
+  --color-neutral-light: #f5f3f0;
+  --color-neutral-light-gray: #e5e7eb;
+  --color-neutral-mid: #9ca3af;
+  --color-neutral-dark-gray: #1f2937;
+  --color-neutral-dark: #111827;
+
+  /* States */
+  --color-success: #178f52;
+  --color-warning: #d97706;
+  --color-error: #c2410c;
 }

@@ -4,14 +4,85 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Home | Luna Handyman Solutions">
   <!-- Hero Section -->
-  <section class="relative bg-[url('/images/hero.jpg')] bg-cover bg-center h-[80vh] flex items-center justify-center text-center text-white overflow-hidden">
-    <div class="bg-black/60 absolute inset-0"></div>
-    <div class="relative z-10 px-6 max-w-4xl">
-      <h1 class="text-6xl md:text-7xl font-bold text-primary mb-6 leading-tight animate-fadeIn">Building Your Vision, Brick by Brick</h1>
-      <p class="text-xl md:text-2xl mb-10 text-neutral-white leading-relaxed">Reliable construction and renovation services you can trust.</p>
-      <a href="/contact" class="inline-block bg-accent hover:opacity-90 text-neutral-dark-gray font-bold py-4 px-10 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
-        Get a Free Quote
-      </a>
+  <section class="relative isolate overflow-hidden bg-[url('/images/hero.jpg')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-neutral-dark/70"></div>
+    <div class="absolute -left-32 -top-32 h-72 w-72 rounded-full bg-accent/40 blur-3xl"></div>
+    <div class="absolute -right-24 bottom-10 h-60 w-60 rounded-full bg-primary/30 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-28 md:py-32">
+      <div class="grid gap-12 md:grid-cols-[1.2fr,0.8fr] items-center text-neutral-white">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-3 bg-neutral-dark/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/15 shadow-lg">
+            <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em]">Full-service construction partner</p>
+          </div>
+
+          <div class="space-y-4">
+            <h1 class="text-5xl md:text-6xl font-bold leading-[1.05] text-neutral-white drop-shadow-lg">
+              Building remarkable spaces with precision and pride.
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-light-gray/90 leading-relaxed max-w-2xl">
+              From ground-up builds to meticulous renovations, our crews deliver craftsmanship that stands the test of time—on schedule and on budget.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <a href="/contact" class="inline-flex justify-center items-center gap-2 bg-accent text-neutral-dark font-bold py-4 px-8 rounded-xl shadow-xl hover:bg-[var(--color-accent-strong)] transition duration-200">
+              Get a quote
+              <span aria-hidden="true" class="text-xl">→</span>
+            </a>
+            <a href="/projects" class="inline-flex justify-center items-center gap-2 border border-white/40 text-neutral-white font-semibold py-4 px-7 rounded-xl hover:border-white hover:bg-white/10 transition duration-200">
+              View recent builds
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-xl">
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl px-4 py-5 border border-white/10 shadow-lg">
+              <p class="text-3xl font-bold text-accent">15+</p>
+              <p class="text-sm uppercase tracking-wide text-neutral-light-gray">Years delivering quality</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl px-4 py-5 border border-white/10 shadow-lg">
+              <p class="text-3xl font-bold text-primary">100+</p>
+              <p class="text-sm uppercase tracking-wide text-neutral-light-gray">Projects completed</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl px-4 py-5 border border-white/10 shadow-lg">
+              <p class="text-3xl font-bold text-neutral-white">4.9★</p>
+              <p class="text-sm uppercase tracking-wide text-neutral-light-gray">Client satisfaction</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/15 shadow-2xl p-8 md:p-10 space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm uppercase tracking-[0.15em] text-neutral-light-gray">Featured project</p>
+              <p class="text-2xl font-bold text-neutral-white mt-1">Skyline Loft Renovation</p>
+            </div>
+            <span class="inline-flex items-center gap-2 bg-accent text-neutral-dark px-3 py-1 rounded-full text-sm font-semibold shadow">
+              On time
+            </span>
+          </div>
+
+          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+            <img src="/images/hero.jpg" alt="Featured renovation project" class="w-full h-48 object-cover">
+          </div>
+
+          <ul class="space-y-3 text-neutral-light-gray">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+              <span>Structural rework, custom millwork, and high-efficiency systems seamlessly integrated.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+              <span>Delivered in 14 weeks with zero downtime for residents.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+              <span>Dedicated site lead and transparent reporting every milestone.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -19,8 +90,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <!-- Services Section -->
     <section class="max-w-7xl mx-auto px-6 py-20">
       <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold text-neutral-dark-gray mb-4">Our Services</h2>
-        <div class="w-24 h-1 bg-primary mx-auto"></div>
+        <h2 class="text-5xl font-bold text-secondary mb-4">Our Services</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
       </div>
       
       <div class="grid gap-10 md:grid-cols-3">
@@ -45,49 +116,108 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <!-- About Section -->
-    <section class="bg-neutral-light-gray py-20 px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="text-4xl font-bold text-neutral-dark-gray mb-6">About Luna Handyman Solutions</h2>
-            <p class="text-neutral-dark-gray text-lg leading-relaxed mb-6">
-              With over 15 years of experience, Luna Handyman Solutions provides dependable and high-quality
-              construction services. Our mission is to turn every client's vision into reality with
-              professionalism, precision, and pride.
+    <section class="relative py-20 px-6 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-neutral-light-gray via-white to-neutral-light-gray opacity-90"></div>
+      <div class="absolute -left-28 top-6 h-64 w-64 rounded-full bg-accent/25 blur-3xl"></div>
+      <div class="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-primary/15 blur-3xl"></div>
+
+      <div class="relative max-w-6xl mx-auto grid md:grid-cols-[1.15fr,0.85fr] gap-12 items-center">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 bg-white/70 border border-neutral-200 px-4 py-2 rounded-full shadow-sm backdrop-blur">
+            <span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-dark">About Luna</p>
+          </div>
+
+          <div class="space-y-3">
+            <h2 class="text-4xl md:text-5xl font-bold text-secondary leading-tight">A build partner obsessed with craft and clarity.</h2>
+            <p class="text-neutral-dark-gray text-lg leading-relaxed">
+              For 15+ years we've been the crew homeowners and developers call when deadlines, quality, and safety all matter equally.
+              Expect site leads who communicate daily, tradespeople who sweat the details, and a process designed to keep surprises off your job site.
             </p>
-            <div class="space-y-4">
-              <div class="flex items-start">
-                <span class="text-primary text-2xl mr-4">✓</span>
-                <p class="text-neutral-dark-gray">Expert craftspeople with proven track records</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3 bg-white/80 border border-neutral-200 rounded-2xl px-4 py-4 shadow-sm">
+              <span class="mt-1 h-3 w-3 rounded-full bg-primary"></span>
+              <div>
+                <p class="font-semibold text-neutral-dark">Licensed specialists on every site</p>
+                <p class="text-sm text-neutral-dark-gray">Structural, electrical, and finish teams aligned from day one.</p>
               </div>
-              <div class="flex items-start">
-                <span class="text-primary text-2xl mr-4">✓</span>
-                <p class="text-neutral-dark-gray">Transparent communication and timeline management</p>
+            </div>
+            <div class="flex items-start gap-3 bg-white/80 border border-neutral-200 rounded-2xl px-4 py-4 shadow-sm">
+              <span class="mt-1 h-3 w-3 rounded-full bg-accent"></span>
+              <div>
+                <p class="font-semibold text-neutral-dark">Transparent budgeting & reporting</p>
+                <p class="text-sm text-neutral-dark-gray">Milestone check-ins with cost tracking you can actually read.</p>
               </div>
-              <div class="flex items-start">
-                <span class="text-primary text-2xl mr-4">✓</span>
-                <p class="text-neutral-dark-gray">Quality materials and superior workmanship</p>
+            </div>
+            <div class="flex items-start gap-3 bg-white/80 border border-neutral-200 rounded-2xl px-4 py-4 shadow-sm">
+              <span class="mt-1 h-3 w-3 rounded-full bg-secondary"></span>
+              <div>
+                <p class="font-semibold text-neutral-dark">Safety-first operations</p>
+                <p class="text-sm text-neutral-dark-gray">Strict jobsite protocols and insured crews protect your investment.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 bg-white/80 border border-neutral-200 rounded-2xl px-4 py-4 shadow-sm">
+              <span class="mt-1 h-3 w-3 rounded-full bg-neutral-dark"></span>
+              <div>
+                <p class="font-semibold text-neutral-dark">Finish-grade craftsmanship</p>
+                <p class="text-sm text-neutral-dark-gray">Millwork, tiling, and paint teams that deliver showroom polish.</p>
               </div>
             </div>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-xl">
-            <div class="grid grid-cols-2 gap-6 text-center">
-              <div class="py-6 border-b-2 border-primary">
-                <p class="text-4xl font-bold text-primary mb-2">15+</p>
-                <p class="text-neutral-dark-gray font-semibold">Years of Experience</p>
+        </div>
+
+        <div class="bg-white/85 backdrop-blur-xl rounded-3xl border border-neutral-200 shadow-2xl p-8 space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm uppercase tracking-[0.14em] text-neutral-dark-gray">Build roadmap</p>
+              <p class="text-2xl font-bold text-neutral-dark mt-1">How we deliver</p>
+            </div>
+            <span class="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">
+              4-step flow
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">1</div>
+              <div>
+                <p class="font-semibold text-neutral-dark">Site walk & scope mapping</p>
+                <p class="text-sm text-neutral-dark-gray">We document existing conditions, risks, and opportunities so you know exactly what to expect.</p>
               </div>
-              <div class="py-6 border-b-2 border-primary">
-                <p class="text-4xl font-bold text-primary mb-2">100+</p>
-                <p class="text-neutral-dark-gray font-semibold">Projects Completed</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-accent/15 text-neutral-dark font-bold flex items-center justify-center">2</div>
+              <div>
+                <p class="font-semibold text-neutral-dark">Build plan + budget lock</p>
+                <p class="text-sm text-neutral-dark-gray">Transparent pricing with alternates and a schedule you can track at every milestone.</p>
               </div>
-              <div class="py-6 border-t-2 border-primary">
-                <p class="text-4xl font-bold text-primary mb-2">1000+</p>
-                <p class="text-neutral-dark-gray font-semibold">Happy Clients</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-secondary/15 text-secondary font-bold flex items-center justify-center">3</div>
+              <div>
+                <p class="font-semibold text-neutral-dark">Execution with daily updates</p>
+                <p class="text-sm text-neutral-dark-gray">Dedicated site lead, coordinated trades, and photo reports keep progress visible.</p>
               </div>
-              <div class="py-6 border-t-2 border-primary">
-                <p class="text-4xl font-bold text-primary mb-2">24/7</p>
-                <p class="text-neutral-dark-gray font-semibold">Customer Support</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-neutral-dark/10 text-neutral-dark font-bold flex items-center justify-center">4</div>
+              <div>
+                <p class="font-semibold text-neutral-dark">Quality checks & handoff</p>
+                <p class="text-sm text-neutral-dark-gray">Punch lists resolved quickly, warranties issued, and a walkthrough to ensure every detail is right.</p>
               </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-light-gray/80 px-4 py-5 shadow-sm">
+              <p class="text-3xl font-bold text-primary">4.9★</p>
+              <p class="text-sm text-neutral-dark-gray">Average client rating</p>
+            </div>
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-light-gray/80 px-4 py-5 shadow-sm">
+              <p class="text-3xl font-bold text-neutral-dark">24/7</p>
+              <p class="text-sm text-neutral-dark-gray">Site lead availability</p>
             </div>
           </div>
         </div>
@@ -99,27 +229,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl md:text-5xl font-bold text-neutral-white mb-6">Ready to Start Your Project?</h2>
         <p class="text-lg text-neutral-light-gray mb-10 leading-relaxed">Let's discuss your ideas and bring them to life with our expert team.</p>
-        <a href="/contact" class="inline-block bg-accent text-neutral-dark-gray font-bold py-4 px-12 rounded-lg hover:opacity-90 transition duration-300 transform hover:scale-105 shadow-lg">
+        <a href="/contact" class="inline-block bg-accent text-neutral-dark font-bold py-4 px-12 rounded-lg hover:bg-[var(--color-accent-strong)] transition duration-300 transform hover:scale-105 shadow-lg">
           Contact Us Today
         </a>
       </div>
     </section>
   </main>
 </BaseLayout>
-
-<style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  :global(body) .animate-fadeIn {
-    animation: fadeIn 0.8s ease-out;
-  }
-</style>
