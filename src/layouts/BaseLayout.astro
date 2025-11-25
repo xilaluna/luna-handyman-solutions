@@ -29,28 +29,39 @@ const isActive = (href: string) => {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 		<meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 	</head>
 
-	<body class="bg-neutral-light text-neutral-dark font-sans">
+	<body class="bg-neutral-light text-neutral-dark antialiased">
     <nav class="sticky top-0 z-50">
-      <div class="relative bg-neutral-dark/90 backdrop-blur supports-[backdrop-filter]:bg-neutral-dark/75 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
-          <a href="/" class="flex items-center gap-3 text-neutral-white">
-            <img src={logo.src} alt="Luna Handyman Solutions logo" class="h-11 w-11 rounded-xl shadow-lg" />
+      <div class="bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-neutral-light-gray">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+          <a href="/" class="flex items-center gap-3 text-secondary">
+            <img src={logo.src} alt="Luna Handyman Solutions logo" class="h-10 w-10" />
             <div class="leading-tight">
-              <p class="text-lg font-bold">Luna Handyman</p>
-              <p class="text-sm text-neutral-light-gray">Builds • Renovations • Care</p>
+              <p class="display-font text-lg font-semibold">Luna Handyman</p>
+              <p class="text-xs uppercase tracking-[0.22em] text-neutral-mid">Builds • Renovations</p>
             </div>
           </a>
 
-          <div class="hidden md:flex items-center gap-8 text-neutral-light-gray font-medium">
+          <div class="hidden md:flex items-center gap-7 text-neutral-dark font-medium">
             {navLinks.map((link) => (
               <a
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                class={`hover:text-accent transition ${isActive(link.href) ? "text-accent font-semibold" : ""}`}
+                class={`hover:text-primary transition ${isActive(link.href) ? "text-primary font-semibold" : ""}`}
               >
                 {link.label}
               </a>
@@ -58,35 +69,45 @@ const isActive = (href: string) => {
           </div>
 
           <div class="hidden md:flex items-center gap-3">
-            <a href="tel:+14157678986" class="inline-flex items-center gap-2 text-neutral-light-gray hover:text-accent transition">
-              <span class="text-lg">📞</span>
-              <span class="font-semibold">415-767-8986</span>
+            <a href="tel:+14157678986" class="inline-flex items-center gap-2 text-secondary font-semibold hover:text-primary transition">
+              <span class="text-base">📞</span>
+              <span>415-767-8986</span>
             </a>
-            <a href="/contact" class="inline-flex items-center gap-2 bg-accent text-neutral-dark font-semibold px-4 py-3 rounded-xl shadow-lg hover:bg-[var(--color-accent-strong)] transition">
-              Get a quote
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-2 bg-primary text-neutral-white font-semibold px-4 py-2.5 rounded-xl shadow-md hover:bg-primary-dark transition"
+            >
+              Book a consult
               <span aria-hidden="true">→</span>
             </a>
           </div>
 
           <details class="md:hidden relative">
-            <summary class="flex items-center gap-3 text-neutral-white cursor-pointer select-none border border-white/15 rounded-xl px-3 py-2 hover:border-white/30 transition">
+            <summary class="flex items-center gap-2 text-secondary cursor-pointer select-none border border-neutral-light-gray rounded-xl px-3 py-2 bg-white shadow-sm">
               <span class="font-semibold">Menu</span>
               <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" d="M3 6h14M3 10h14M3 14h14" />
               </svg>
             </summary>
-            <div class="absolute right-0 mt-3 w-64 bg-neutral-dark border border-white/15 rounded-2xl shadow-2xl p-4 flex flex-col gap-3 text-neutral-light-gray">
+            <div class="absolute right-0 mt-3 w-64 bg-white border border-neutral-light-gray rounded-2xl shadow-2xl p-4 flex flex-col gap-3 text-neutral-dark">
               {navLinks.map((link) => (
                 <a
                   href={link.href}
                   aria-current={isActive(link.href) ? "page" : undefined}
-                  class={`hover:text-accent transition ${isActive(link.href) ? "text-accent font-semibold" : ""}`}
+                  class={`rounded-lg px-3 py-2 hover:bg-neutral-light transition ${isActive(link.href) ? "text-primary font-semibold" : ""}`}
                 >
                   {link.label}
                 </a>
               ))}
-              <a href="/contact" class="inline-flex justify-center items-center gap-2 bg-accent text-neutral-dark font-semibold px-3 py-3 rounded-xl shadow hover:bg-[var(--color-accent-strong)] transition">
-                Get a quote
+              <a
+                href="/contact"
+                class="inline-flex justify-center items-center gap-2 bg-primary text-neutral-white font-semibold px-3 py-3 rounded-xl shadow hover:bg-primary-dark transition"
+              >
+                Book a consult
+              </a>
+              <a href="tel:+14157678986" class="inline-flex items-center gap-2 text-secondary font-semibold px-3 py-2 hover:text-primary transition">
+                <span class="text-base">📞</span>
+                <span>415-767-8986</span>
               </a>
             </div>
           </details>
@@ -96,46 +117,41 @@ const isActive = (href: string) => {
 
     <slot />
 
-    <footer class="bg-neutral-dark text-neutral-light mt-20">
-      <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
-        <div class="md:col-span-2 space-y-3">
-          <div class="flex items-center gap-3">
-            <img src={logo.src} alt="Luna Handyman Solutions logo" class="h-11 w-11 rounded-xl shadow-lg" />
-            <div>
-              <p class="text-lg font-bold text-neutral-white">Luna Handyman Solutions</p>
-              <p class="text-sm text-neutral-light-gray">Craftsmanship, clarity, and jobsite care on every build.</p>
+    <footer class="bg-neutral-dark text-neutral-light mt-16">
+      <div class="max-w-7xl mx-auto px-6 py-12 space-y-10">
+
+        <div class="grid md:grid-cols-4 gap-10">
+          <div class="md:col-span-2 space-y-3">
+            <div class="flex items-center gap-3">
+              <img src={logo.src} alt="Luna Handyman Solutions logo" class="h-11 w-11 rounded-xl shadow-lg" />
+              <div>
+                <p class="display-font text-lg font-semibold text-neutral-white">Luna Handyman Solutions</p>
+                <p class="text-sm text-neutral-light-gray">Craftsmanship, clarity, and clean jobsites.</p>
+              </div>
+            </div>
+            <p class="text-neutral-light-gray">
+              Full-service crews for repairs, remodels, and commercial upkeep. One accountable lead, vetted trades, tidy protection.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <p class="text-sm uppercase tracking-[0.18em] text-neutral-light-gray">Links</p>
+            <div class="flex flex-col gap-2 text-neutral-white">
+              <a href="/about" class="hover:text-accent transition">About</a>
+              <a href="/services" class="hover:text-accent transition">Services</a>
+              <a href="/projects" class="hover:text-accent transition">Projects</a>
+              <a href="/contact" class="hover:text-accent transition">Contact</a>
             </div>
           </div>
-          <p class="text-neutral-light-gray">
-            Full-service construction and renovation crews serving residential and commercial clients with transparent communication and reliable delivery.
-          </p>
-          <div class="flex items-center gap-3">
-            <a href="/contact" class="inline-flex items-center gap-2 bg-accent text-neutral-dark font-semibold px-4 py-3 rounded-xl shadow hover:bg-[var(--color-accent-strong)] transition">
-              Book a walkthrough
-            </a>
-            <a href="tel:+14157678986" class="inline-flex items-center gap-2 text-neutral-light-gray hover:text-accent transition">
-              <span class="text-lg">📞</span> 415-767-8986
-            </a>
-          </div>
-        </div>
 
-        <div class="space-y-3">
-          <p class="text-sm uppercase tracking-[0.18em] text-neutral-light-gray">Company</p>
-          <div class="flex flex-col gap-2 text-neutral-white">
-            <a href="/about" class="hover:text-accent transition">About</a>
-            <a href="/services" class="hover:text-accent transition">Services</a>
-            <a href="/projects" class="hover:text-accent transition">Projects</a>
-            <a href="/contact" class="hover:text-accent transition">Contact</a>
+          <div class="space-y-3">
+            <p class="text-sm uppercase tracking-[0.18em] text-neutral-light-gray">Service area</p>
+            <p class="text-neutral-white leading-relaxed">
+              Bay Area, California<br />
+              On-site by appointment
+            </p>
+            <p class="text-neutral-light-gray">Mon - Sat · 7am - 6pm</p>
           </div>
-        </div>
-
-        <div class="space-y-3">
-          <p class="text-sm uppercase tracking-[0.18em] text-neutral-light-gray">Service area</p>
-          <p class="text-neutral-white leading-relaxed">
-            Bay Area, California<br />
-            On-site by appointment
-          </p>
-          <p class="text-neutral-light-gray">Mon - Sat · 7am - 6pm</p>
         </div>
       </div>
       <div class="border-t border-white/10 text-center text-sm text-neutral-light-gray py-5">

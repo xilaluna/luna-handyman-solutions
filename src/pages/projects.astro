@@ -1,92 +1,63 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { projects } from '../data/projects';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
+
+const placeholderImage =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23e5e7eb'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-family='Arial' font-size='28'%3EProject image%3C/text%3E%3C/svg%3E";
 ---
 
 <BaseLayout title="Our Projects | Luna Handyman Solutions">
-  <section class="relative isolate overflow-hidden bg-gradient-to-br from-neutral-dark via-neutral-dark to-secondary">
-    <div class="absolute -left-24 top-10 h-64 w-64 rounded-full bg-accent/30 blur-3xl"></div>
-    <div class="absolute right-0 bottom-8 h-72 w-72 rounded-full bg-primary/25 blur-3xl"></div>
+  <section class="relative overflow-hidden bg-gradient-to-br from-neutral-white via-neutral-light to-white">
+    <div class="absolute -left-24 top-8 h-64 w-64 rounded-full bg-primary/10 blur-3xl"></div>
+    <div class="absolute right-0 bottom-10 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
 
-    <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-24 text-neutral-white">
-      <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-4 py-2 backdrop-blur">
-        <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-        <p class="text-sm font-semibold uppercase tracking-[0.2em]">Project portfolio</p>
+    <div class="relative max-w-6xl mx-auto px-6 py-16 md:py-20 space-y-6">
+      <div class="space-y-3 max-w-4xl">
+        <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">Project portfolio</p>
+        <h1 class="display-font text-4xl md:text-5xl font-semibold text-secondary leading-[1.05]">Builds that stay on schedule and on spec.</h1>
+        <p class="text-lg text-neutral-dark-gray leading-relaxed max-w-3xl">
+          Renovations, tenant improvements, and structural upgrades delivered with tidy protection, coordinated trades, and daily updates you can act on.
+        </p>
       </div>
-      <div class="grid md:grid-cols-[1.2fr,0.8fr] gap-10 items-center mt-10">
-        <div class="space-y-4">
-          <h1 class="text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">Builds that stay on schedule and on spec.</h1>
-          <p class="text-lg text-neutral-light-gray leading-relaxed max-w-2xl">
-            A selection of renovations, tenant improvements, and ground-up builds delivered with disciplined sequencing, vetted trades, and finish-grade supervision.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-4 py-2 rounded-full border border-white/25 bg-white/10 text-sm font-semibold">Ground-up</span>
-            <span class="px-4 py-2 rounded-full border border-white/25 bg-white/10 text-sm font-semibold">Renovations</span>
-            <span class="px-4 py-2 rounded-full border border-white/25 bg-white/10 text-sm font-semibold">Tenant improvements</span>
-          </div>
-        </div>
 
-        <div class="bg-white/10 backdrop-blur-xl border border-white/15 rounded-3xl shadow-2xl p-6 space-y-4">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="text-sm uppercase tracking-[0.16em] text-neutral-light-gray">Snapshot</p>
-              <p class="text-3xl font-bold text-neutral-white">Built on trust</p>
-            </div>
-            <span class="inline-flex items-center gap-2 bg-accent text-neutral-dark px-3 py-1 rounded-full text-sm font-semibold shadow">
-              4.9★ rating
-            </span>
-          </div>
-          <div class="grid grid-cols-3 gap-3 text-center">
-            <div class="rounded-2xl bg-white/10 border border-white/10 px-3 py-4">
-              <p class="text-2xl font-bold text-accent">100+</p>
-              <p class="text-xs uppercase tracking-wide text-neutral-light-gray">Projects</p>
-            </div>
-            <div class="rounded-2xl bg-white/10 border border-white/10 px-3 py-4">
-              <p class="text-2xl font-bold text-neutral-white">15+</p>
-              <p class="text-xs uppercase tracking-wide text-neutral-light-gray">Years</p>
-            </div>
-            <div class="rounded-2xl bg-white/10 border border-white/10 px-3 py-4">
-              <p class="text-2xl font-bold text-primary">Zero</p>
-              <p class="text-xs uppercase tracking-wide text-neutral-light-gray">Tolerance for rework</p>
-            </div>
-          </div>
-          <ul class="space-y-2 text-neutral-light-gray">
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Dedicated site leads and milestone reporting on every job.</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Phased approaches for occupied spaces and business continuity.</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Quality checks and punch-list ownership until closeout.</li>
-          </ul>
-        </div>
+      <div class="flex flex-wrap gap-2">
+        <span class="inline-flex items-center gap-2 rounded-full bg-neutral-light px-3 py-1 text-sm text-neutral-dark"><span class="h-2 w-2 rounded-full bg-primary"></span>Renovations</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-neutral-light px-3 py-1 text-sm text-neutral-dark"><span class="h-2 w-2 rounded-full bg-primary"></span>Tenant improvements</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-neutral-light px-3 py-1 text-sm text-neutral-dark"><span class="h-2 w-2 rounded-full bg-primary"></span>Structural & exterior</span>
       </div>
     </div>
   </section>
 
   <main class="space-y-20 py-16">
-    <section class="max-w-7xl mx-auto px-6">
+    <section class="max-w-6xl mx-auto px-6">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
         <div class="space-y-2">
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Recent builds</p>
-          <h2 class="text-4xl font-bold text-secondary leading-tight">A closer look at our work.</h2>
+          <h2 class="display-font text-3xl md:text-4xl font-semibold text-secondary leading-tight">A closer look at our work.</h2>
           <p class="text-neutral-dark-gray text-lg max-w-3xl">
-            Projects spanning residential, commercial, and specialty scopes—all delivered with predictable schedules, safety-first crews, and finish-grade attention.
+            Proof across residential, commercial, and specialty scopes—each run with one accountable lead, vetted trades, and finish-grade supervision.
           </p>
         </div>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-neutral-dark text-neutral-white px-5 py-3 rounded-xl font-semibold shadow-lg hover:bg-black transition">
-          Start a project consult
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 bg-primary text-neutral-white px-5 py-3 rounded-xl font-semibold shadow-md hover:bg-primary-dark transition"
+        >
+          Start a consult
           <span aria-hidden="true" class="text-lg">→</span>
         </a>
       </div>
 
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map(project => (
+        {projects.map((project) => (
           <div class="group bg-white rounded-3xl shadow-lg border border-neutral-200 overflow-hidden transition hover:-translate-y-2 hover:shadow-2xl">
-            <div class="relative h-52 overflow-hidden">
+            <div class="relative h-52 overflow-hidden bg-neutral-light">
               <img
-                src={project.image}
+                src={project.image || placeholderImage}
                 alt={project.title}
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div class="absolute inset-x-0 bottom-0 p-4 flex items-center justify-between bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/40 to-transparent text-neutral-white">
+              <div class="absolute inset-x-0 bottom-0 p-4 flex items-center justify-between bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/30 to-transparent text-neutral-white">
                 <span class="inline-flex items-center gap-2 bg-accent text-neutral-dark px-3 py-1 rounded-full text-xs font-semibold shadow">
                   {project.status}
                 </span>
@@ -94,14 +65,14 @@ import { projects } from '../data/projects';
               </div>
             </div>
 
-            <div class="p-5 space-y-4">
+            <div class="p-5 space-y-3">
               <div class="flex items-center justify-between">
                 <p class="text-sm uppercase tracking-[0.16em] text-primary font-semibold">{project.scope}</p>
                 <span class="inline-flex items-center gap-1 text-sm text-neutral-dark-gray">
                   <span class="text-lg">📍</span> {project.location}
                 </span>
               </div>
-              <h3 class="text-2xl font-bold text-neutral-dark">{project.title}</h3>
+              <h3 class="display-font text-xl font-semibold text-secondary">{project.title}</h3>
               <p class="text-neutral-dark-gray leading-relaxed text-sm">{project.description}</p>
               <div class="flex items-center gap-3 text-sm font-semibold">
                 <a href="/contact" class="inline-flex items-center gap-2 text-primary hover:text-secondary transition">
@@ -115,57 +86,70 @@ import { projects } from '../data/projects';
       </div>
     </section>
 
-    <section class="relative mx-6 overflow-hidden rounded-3xl">
-      <div class="absolute inset-0 bg-gradient-to-r from-secondary via-neutral-dark to-secondary"></div>
-      <div class="absolute -left-20 -bottom-10 h-52 w-52 rounded-full bg-accent/30 blur-3xl"></div>
-      <div class="absolute right-6 top-6 h-20 w-20 rounded-full border border-white/30"></div>
-      <div class="absolute right-20 top-16 h-10 w-10 rounded-full border border-white/20"></div>
-
-      <div class="relative max-w-6xl mx-auto px-8 py-16 md:py-20 grid md:grid-cols-[1.2fr,0.8fr] gap-10 items-center text-neutral-white">
-        <div class="space-y-4">
-          <p class="text-sm uppercase tracking-[0.18em] text-accent font-semibold">Let’s plan yours</p>
-          <h2 class="text-4xl md:text-5xl font-bold leading-tight">Tell us your scope—we’ll map the build path.</h2>
-          <p class="text-lg text-neutral-light-gray leading-relaxed max-w-3xl">
-            Share plans or ideas and we’ll return a clear scope, timeline, and budget with a dedicated site lead before mobilization.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-accent text-neutral-dark font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-[var(--color-accent-strong)] transition">
-              Book a walkthrough
-              <span aria-hidden="true" class="text-lg">→</span>
-            </a>
-            <a href="/services" class="inline-flex items-center justify-center gap-2 border border-white/30 text-neutral-white font-semibold py-4 px-6 rounded-xl hover:border-white hover:bg-white/10 transition">
-              Explore services
-            </a>
+    <section class="bg-secondary text-neutral-light">
+      <div class="max-w-6xl mx-auto px-6 py-16 space-y-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="space-y-2">
+            <p class="text-sm uppercase tracking-[0.2em] text-accent font-semibold">Process</p>
+            <h3 class="display-font text-3xl md:text-4xl font-semibold text-neutral-white leading-tight">Same rhythm on every project.</h3>
+            <p class="text-neutral-light-gray text-lg max-w-2xl">Scope, plan, build, close—kept predictable with daily updates, tidy protection, and one accountable lead.</p>
           </div>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 px-5 py-3 text-neutral-white font-semibold hover:bg-white/10 transition"
+          >
+            Schedule a walkthrough
+          </a>
         </div>
 
-        <div class="bg-white/10 backdrop-blur-xl rounded-2xl border border-white/15 shadow-2xl p-6 md:p-7 space-y-4">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="text-sm uppercase tracking-[0.14em] text-neutral-light-gray">Project kickoff</p>
-              <p class="text-xl font-bold text-neutral-white mt-1">What to expect</p>
-            </div>
-            <span class="inline-flex items-center gap-2 bg-accent text-neutral-dark px-3 py-1 rounded-full text-sm font-semibold">
-              48h response
-            </span>
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="rounded-2xl bg-neutral-white/5 border border-white/10 p-5">
+            <div class="h-10 w-10 rounded-full bg-primary/20 text-neutral-white font-semibold flex items-center justify-center mb-3">01</div>
+            <p class="display-font text-lg font-semibold text-neutral-white mb-1">Scope & site walk</p>
+            <p class="text-neutral-light-gray text-sm leading-relaxed">Document conditions, risks, and constraints—align budget and milestones.</p>
           </div>
+          <div class="rounded-2xl bg-neutral-white/5 border border-white/10 p-5">
+            <div class="h-10 w-10 rounded-full bg-accent/30 text-neutral-dark font-semibold flex items-center justify-center mb-3">02</div>
+            <p class="display-font text-lg font-semibold text-neutral-white mb-1">Plan & permit</p>
+            <p class="text-neutral-light-gray text-sm leading-relaxed">Schedule, procurement, permitting, and inspections handled before mobilization.</p>
+          </div>
+          <div class="rounded-2xl bg-neutral-white/5 border border-white/10 p-5">
+            <div class="h-10 w-10 rounded-full bg-neutral-light/20 text-neutral-white font-semibold flex items-center justify-center mb-3">03</div>
+            <p class="display-font text-lg font-semibold text-neutral-white mb-1">Build + update</p>
+            <p class="text-neutral-light-gray text-sm leading-relaxed">Coordinated trades, daily logs, and clean protection for occupied spaces.</p>
+          </div>
+          <div class="rounded-2xl bg-neutral-white/5 border border-white/10 p-5">
+            <div class="h-10 w-10 rounded-full bg-primary/20 text-neutral-white font-semibold flex items-center justify-center mb-3">04</div>
+            <p class="display-font text-lg font-semibold text-neutral-white mb-1">QC & handoff</p>
+            <p class="text-neutral-light-gray text-sm leading-relaxed">Punch resolved quickly, warranties issued, and support if you need it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="space-y-3 text-neutral-light-gray">
-            <p class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Dedicated site lead assigned early, with daily updates.</p>
-            <p class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Clear schedule, procurement plan, and safety protocols.</p>
-            <p class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>Weekly photo reports and budget tracking for stakeholders.</p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3">
-            <div class="rounded-xl bg-white/5 border border-white/10 px-4 py-4">
-              <p class="text-2xl font-bold text-neutral-white">Site</p>
-              <p class="text-sm text-neutral-light-gray">On-site in 72 hours</p>
-            </div>
-            <div class="rounded-xl bg-white/5 border border-white/10 px-4 py-4">
-              <p class="text-2xl font-bold text-neutral-white">Docs</p>
-              <p class="text-sm text-neutral-light-gray">Permits & inspections handled</p>
-            </div>
-          </div>
+    <section class="mx-6 mb-12">
+      <div class="max-w-6xl mx-auto bg-white border border-neutral-light-gray rounded-3xl shadow-lg px-6 md:px-10 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="space-y-2">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Ready to start?</p>
+          <h4 class="display-font text-2xl md:text-3xl font-semibold text-secondary">Let’s map your scope and timeline.</h4>
+          <p class="text-neutral-dark-gray text-lg leading-relaxed max-w-2xl">
+            Share your plans or ideas and we’ll return a clear budget, schedule, and next steps.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 bg-primary text-neutral-white font-semibold px-5 py-3 rounded-xl shadow-md hover:bg-primary-dark transition"
+          >
+            Book a consult
+            <span aria-hidden="true">→</span>
+          </a>
+          <a
+            href="tel:+14157678986"
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-secondary/20 px-5 py-3 text-secondary font-semibold hover:border-secondary/50 transition"
+          >
+            Call 415-767-8986
+          </a>
         </div>
       </div>
     </section>
