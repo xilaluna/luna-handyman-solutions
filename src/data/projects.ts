@@ -2,9 +2,9 @@ import aduFremont from "../assets/images/adu-fremont.jpeg";
 import aduRichmondElectrical from "../assets/images/adu-richmond-electrical.jpeg";
 import aduRichmond from "../assets/images/adu-richmond.jpeg";
 import drivewayRepair from "../assets/images/driveway-repair.jpg";
-import kitchenBathRemodel from "../assets/images/kitchen-bathroom-remodel-1.jpg";
-import kitchenBathRemodelAlt1 from "../assets/images/kitchen-bathroom-remodel-2.jpg";
-import kitchenBathRemodelAlt2 from "../assets/images/kitchen-bathroom-remodel-3.jpg";
+import kitchenBathRemodelBathroom from "../assets/images/kitchen-bathroom-remodel-bathroom.jpg";
+import kitchenBathRemodelKitchen from "../assets/images/kitchen-bathroom-remodel-kitchen.jpg";
+import kitchenBathRemodelPainting from "../assets/images/kitchen-bathroom-remodel-painting.jpg";
 import stairRepair from "../assets/images/stair-repair.jpg";
 import winterization from "../assets/images/winterization.jpg";
 
@@ -61,13 +61,13 @@ export const projects = [
     title: "Kitchen & Bathroom Remodel",
     description:
       "Interior remodeling project that included upgrades to kitchen and bathroom spaces, electrical improvements, painting, fixture installations, and overall modernization to improve style and functionality.",
-    thumbnail: kitchenBathRemodel,
+    thumbnail: kitchenBathRemodelKitchen,
     location: "San Jose, CA",
     timeline: "8 weeks",
     scope: "Interior remodel",
     status: "Completed",
     services: ["Electrical", "Painting", "Bathroom Remodel", "Kitchen Remodel"],
-    photos: [kitchenBathRemodel, kitchenBathRemodelAlt1, kitchenBathRemodelAlt2],
+    photos: [kitchenBathRemodelKitchen, kitchenBathRemodelBathroom, kitchenBathRemodelPainting,],
   },
   {
     title: "Entryway & Main Stairs Repair",
