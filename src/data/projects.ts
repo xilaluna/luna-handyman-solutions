@@ -13,7 +13,7 @@ export const projects = [
     title: "ADU Richmond",
     description:
       "Full ADU improvement project including interior plumbing, electrical upgrades, drywall installation, carpentry work, cabinet setting, tile installation, and concrete work. This project delivered a fully finished, functional living space.",
-    image: aduRichmond,
+    thumbnail: aduRichmond,
     location: "Richmond, CA",
     timeline: "12 weeks",
     scope: "ADU build-out",
@@ -25,7 +25,7 @@ export const projects = [
     title: "Driveway Repair",
     description:
       "Existing damaged driveway was demolished and regraded for proper drainage and slope. Rebar reinforcement was installed and a new concrete slab was poured to create a durable, long-lasting driveway surface.",
-    image: drivewayRepair,
+    thumbnail: drivewayRepair,
     location: "San Francisco, CA",
     timeline: "2 weeks",
     scope: "Concrete & drainage",
@@ -37,7 +37,7 @@ export const projects = [
     title: "ADU Fremont",
     description:
       "Complete ADU build-out including structural framing, new plumbing and electrical systems, insulation, drywall installation, interior painting, and full tilework. Project transformed an unfinished space into a fully functional accessory dwelling unit.",
-    image: aduFremont,
+    thumbnail: aduFremont,
     location: "Fremont, CA",
     timeline: "14 weeks",
     scope: "ADU build-out",
@@ -49,7 +49,7 @@ export const projects = [
     title: "Winterization",
     description:
       "Home prepared for winter by insulating and securing pipes, shutting down exterior water lines, performing plumbing checks, and conducting a full pressure test to ensure the system was protected from freeze damage.",
-    image: winterization,
+    thumbnail: winterization,
     location: "Martinez, CA",
     timeline: "1 week",
     scope: "Seasonal prep",
@@ -61,7 +61,7 @@ export const projects = [
     title: "Kitchen & Bathroom Remodel",
     description:
       "Interior remodeling project that included upgrades to kitchen and bathroom spaces, electrical improvements, painting, fixture installations, and overall modernization to improve style and functionality.",
-    image: kitchenBathRemodel,
+    thumbnail: kitchenBathRemodel,
     location: "San Jose, CA",
     timeline: "8 weeks",
     scope: "Interior remodel",
@@ -73,7 +73,7 @@ export const projects = [
     title: "Entryway & Main Stairs Repair",
     description:
       "Structural repair of the main entryway and stairs including dry rot removal, framing reinforcement, concrete patching, waterproofing, stucco restoration, and final painting. Work restored safety and curb appeal.",
-    image: stairRepair,
+    thumbnail: stairRepair,
     location: "San Francisco, CA",
     timeline: "3 weeks",
     scope: "Structural repair",
