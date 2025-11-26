@@ -18,6 +18,7 @@
 - Keep markup semantic and responsive-first; lean on Tailwind utility classes already used in pages and layout.
 - Extend design tokens through `@theme` in `global.css`; reuse CSS utilities like `.section-padding` and `.section-container` for spacing consistency.
 - For assets, use descriptive kebab-case filenames; place reusable media in `src/assets/` and route-specific uploads alongside their data entry.
+- Add short comments only where they clarify intent (e.g., nav active-state logic, data mapping order); avoid restating obvious code.
 
 ## Testing Guidelines
 - No automated tests yet; perform manual sweeps after changes: nav highlighting, responsive layout at mobile/tablet/desktop, and correct rendering of project data cards.
