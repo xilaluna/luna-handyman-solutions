@@ -38,7 +38,69 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <form action={actions.send} method="POST" class="grid gap-6 md:grid-cols-2">
-            <input type="hidden" name="form" value="contact-page" />
+            <div class="space-y-2">
+              <label for="name" class="text-sm font-semibold text-secondary">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                placeholder="Your full name"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-semibold text-secondary">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label for="phone" class="text-sm font-semibold text-secondary">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                placeholder="(415) 555-1234"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label for="location" class="text-sm font-semibold text-secondary">Location</label>
+              <input
+                id="location"
+                name="location"
+                type="text"
+                autocomplete="address-level2"
+                required
+                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                placeholder="City or neighborhood"
+              />
+            </div>
+
+            <div class="space-y-2 md:col-span-2">
+              <label for="message" class="text-sm font-semibold text-secondary">Project details</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                placeholder="Scope, timeline, budget notes"
+              ></textarea>
+            </div>
 
             <div class="md:col-span-2 flex flex-col sm:flex-row sm:items-center gap-3">
               <button
