@@ -1,21 +1,36 @@
 import { ActionError, defineAction } from "astro:actions";
 import { Resend } from "resend";
+import { z } from "astro:schema";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const server = {
   send: defineAction({
-    accept: 'form',
-    handler: async () => {
+    accept: "form",
+    input: z.object({
+      name: z.string().min(2),
+      email: z.string().email(),
+      phone: z.string().min(7),
+      location: z.string().min(2),
+      message: z.string().min(5),
+    }),
+    handler: async (formData) => {
       const { data, error } = await resend.emails.send({
-        from: 'Acme <onboarding@resend.dev>',
+        from: 'Luna Handyman Solutions <contact@mail.lunasolutions.pro>',
         to: ['delivered@resend.dev'],
-        subject: 'Hello world',
-        html: '<strong>It works!</strong>',
+        subject: `New Contact Request from: ${formData.name}`,
+        html: `<h2>New Contact Request</h2>
+          <p><strong>Name:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone}</p>
+          <p><strong>Location:</strong> ${formData.location}</p>
+          <p><strong>Message:</strong>${formData.message}</p>`,
       });
 
       if (error) {
         throw new ActionError({
+
+
           code: 'BAD_REQUEST',
           message: error.message,
         });
