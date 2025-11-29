@@ -38,6 +38,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <form action={actions.send} method="POST" class="grid gap-6 md:grid-cols-2">
+            <div class="sr-only" aria-hidden="true">
+              <label for="project-notes">Additional project notes</label>
+              <input
+                id="project-notes"
+                name="projectNotes"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
             <div class="space-y-2">
               <label for="name" class="text-sm font-semibold text-secondary">Name</label>
               <input
