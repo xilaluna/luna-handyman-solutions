@@ -30,8 +30,9 @@ export const server = {
       try {
         const { data, error } = await resend.emails.send({
           from: "Luna Handyman Solutions <contact@mail.lunasolutions.pro>",
-          to: ["delivered@resend.dev"],
+          to: ["jorge.luna@lunasolutions.pro"],
           subject: `New Contact Request from: ${formData.name}`,
+          replyTo: formData.email,
           html: `<h2>New Contact Request</h2>
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
@@ -57,7 +58,8 @@ export const server = {
         console.error("Failed to send contact email", err);
         throw new ActionError({
           code: "INTERNAL_SERVER_ERROR",
-          message: "Unable to send your message right now. Please try again shortly.",
+          message:
+            "Unable to send your message right now. Please try again shortly.",
         });
       }
     },
