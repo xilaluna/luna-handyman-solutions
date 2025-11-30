@@ -4,8 +4,10 @@ export const prerender = false
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const result = Astro.getActionResult(actions.send)
-const inputError = isInputError(result?.error) ? result.error.fields : {}
+const result = Astro.getActionResult(actions.send);
+const inputError = isInputError(result?.error) ? result.error.fields : {};
+const generalError = result?.error && !isInputError(result.error) ? result.error.message : null;
+const success = result?.data && !result?.error;
 ---
 
 <BaseLayout title="Contact | Luna Handyman Solutions">
@@ -40,6 +42,18 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
             <p class="text-neutral-dark-gray">We’ll reply within 48 hours with next steps and a single point of contact.</p>
           </div>
 
+          {success && (
+            <div class="md:col-span-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-800 text-sm">
+              Thanks for reaching out—we received your request and will follow up within 48 hours.
+            </div>
+          )}
+
+          {generalError && (
+            <div class="md:col-span-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700 text-sm">
+              {generalError}
+            </div>
+          )}
+
           <form action={actions.send} method="POST" class="grid gap-6 md:grid-cols-2">
             <div class="sr-only" aria-hidden="true">
               <label for="project-notes">Additional project notes</label>
@@ -60,9 +74,13 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
                 type="text"
                 autocomplete="name"
                 required
-                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                transition:persist
+                class={`w-full rounded-xl border bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:ring-2 outline-none transition ${
+                  inputError.name ? "border-red-400 focus:border-red-500 focus:ring-red-200" : "border-neutral-light-gray focus:border-primary focus:ring-primary/20"
+                }`}
                 placeholder="Your full name"
               />
+              {inputError.name && <p class="text-sm text-red-600">{inputError.name.join(" ")}</p>}
             </div>
 
             <div class="space-y-2">
@@ -73,9 +91,13 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
                 type="email"
                 autocomplete="email"
                 required
-                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                transition:persist
+                class={`w-full rounded-xl border bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:ring-2 outline-none transition ${
+                  inputError.email ? "border-red-400 focus:border-red-500 focus:ring-red-200" : "border-neutral-light-gray focus:border-primary focus:ring-primary/20"
+                }`}
                 placeholder="you@example.com"
               />
+              {inputError.email && <p class="text-sm text-red-600">{inputError.email.join(" ")}</p>}
             </div>
 
             <div class="space-y-2">
@@ -86,9 +108,13 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
                 type="tel"
                 autocomplete="tel"
                 required
-                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                transition:persist
+                class={`w-full rounded-xl border bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:ring-2 outline-none transition ${
+                  inputError.phone ? "border-red-400 focus:border-red-500 focus:ring-red-200" : "border-neutral-light-gray focus:border-primary focus:ring-primary/20"
+                }`}
                 placeholder="(415) 555-1234"
               />
+              {inputError.phone && <p class="text-sm text-red-600">{inputError.phone.join(" ")}</p>}
             </div>
 
             <div class="space-y-2">
@@ -99,9 +125,13 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
                 type="text"
                 autocomplete="address-level2"
                 required
-                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                transition:persist
+                class={`w-full rounded-xl border bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:ring-2 outline-none transition ${
+                  inputError.location ? "border-red-400 focus:border-red-500 focus:ring-red-200" : "border-neutral-light-gray focus:border-primary focus:ring-primary/20"
+                }`}
                 placeholder="City or neighborhood"
               />
+              {inputError.location && <p class="text-sm text-red-600">{inputError.location.join(" ")}</p>}
             </div>
 
             <div class="space-y-2 md:col-span-2">
@@ -111,9 +141,13 @@ const inputError = isInputError(result?.error) ? result.error.fields : {}
                 name="message"
                 rows="4"
                 required
-                class="w-full rounded-xl border border-neutral-light-gray bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                transition:persist
+                class={`w-full rounded-xl border bg-neutral-white px-4 py-3 text-neutral-dark placeholder:text-neutral-mid focus:ring-2 outline-none transition ${
+                  inputError.message ? "border-red-400 focus:border-red-500 focus:ring-red-200" : "border-neutral-light-gray focus:border-primary focus:ring-primary/20"
+                }`}
                 placeholder="Scope, timeline, budget notes"
               ></textarea>
+              {inputError.message && <p class="text-sm text-red-600">{inputError.message.join(" ")}</p>}
             </div>
 
             <div class="md:col-span-2 flex flex-col sm:flex-row sm:items-center gap-3">

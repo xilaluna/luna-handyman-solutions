@@ -2,6 +2,7 @@
 import logo from "../assets/logo.svg";
 import "../styles/global.css";
 import { Image } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
 
 const {title} = Astro.props;
 
@@ -44,6 +45,7 @@ const isActive = (href: string) => {
     />
 		<meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ClientRouter />
 	</head>
 
 	<body class="bg-neutral-light text-neutral-dark antialiased">
