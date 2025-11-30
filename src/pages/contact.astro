@@ -1,8 +1,11 @@
 ---
-import { actions } from "astro:actions";
+import { actions, isInputError } from "astro:actions";
 export const prerender = false
 
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const result = Astro.getActionResult(actions.send)
+const inputError = isInputError(result?.error) ? result.error.fields : {}
 ---
 
 <BaseLayout title="Contact | Luna Handyman Solutions">
