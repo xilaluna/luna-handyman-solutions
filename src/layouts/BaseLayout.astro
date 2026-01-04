@@ -4,14 +4,24 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 
-const {title} = Astro.props;
+type LayoutProps = {
+  title: string;
+  description?: string;
+};
+
+const { title, description }: LayoutProps = Astro.props as LayoutProps;
+const siteUrl = "https://www.lunasolutions.pro";
+const defaultDescription =
+  "Bay Area handyman, remodeling, and commercial upkeep crews delivering tidy protection, daily updates, and predictable schedules.";
+const canonicalPath = Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/+$/, "");
+const canonicalUrl = `${siteUrl}${canonicalPath}${Astro.url.search ?? ""}`;
 
 const navLinks = [
-  {href: "/", label: "Home"},
-  {href: "/about", label: "About"},
-  {href: "/services", label: "Services"},
-  {href: "/projects", label: "Projects"},
-  {href: "/contact", label: "Contact"},
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const normalizePath = (path: string) => path.replace(/\/+$/, "") || "/";
@@ -23,7 +33,6 @@ const isActive = (href: string) => {
   }
   return currentPath === target || currentPath.startsWith(`${target}/`);
 };
-
 ---
 
 <!doctype html>
@@ -45,6 +54,43 @@ const isActive = (href: string) => {
     />
 		<meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description ?? defaultDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Luna Handyman Solutions" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description ?? defaultDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${siteUrl}/android-chrome-512x512.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description ?? defaultDescription} />
+    <meta name="twitter:image" content={`${siteUrl}/android-chrome-512x512.png`} />
+    <meta name="theme-color" content="#101828" />
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        name: "Luna Handyman Solutions",
+        url: siteUrl,
+        logo: `${siteUrl}/android-chrome-512x512.png`,
+        image: `${siteUrl}/android-chrome-512x512.png`,
+        telephone: "+1-415-767-8986",
+        areaServed: {
+          "@type": "City",
+          name: "San Francisco Bay Area",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressRegion: "CA",
+          addressCountry: "US",
+        },
+        openingHours: "Mo-Sa 07:00-18:00",
+        priceRange: "$$",
+        serviceType: ["Handyman services", "Remodeling", "Commercial upkeep"],
+      })}
+    </script>
     <ClientRouter />
 	</head>
 
